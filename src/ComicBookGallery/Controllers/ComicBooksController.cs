@@ -19,6 +19,16 @@ namespace ComicBookGallery.Controllers
             _comicBookRepository = new ComicBookRepository();
         }
 
+        // Builds the list of comic books to the view Index
+        public ActionResult Index()
+        {
+            var comicBooks = _comicBookRepository.GetComicBooks();
+
+            return View(comicBooks);
+
+        }
+
+
         public ActionResult Detail(int? id) // MVC can pass null if ID isn't provided.
         {
             if( id == null)
