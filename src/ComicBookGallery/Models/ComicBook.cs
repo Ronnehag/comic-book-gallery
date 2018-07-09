@@ -8,7 +8,7 @@ namespace ComicBookGallery.Models
     public class ComicBook
     {
         public int Id { get; set; }
-        public string SeriesTitle { get; set; }
+        public Series Series { get; set; }
         public int IssueNumber { get; set; }
         public string DescriptionHtml { get; set; }
         public Artist[] Artists { get; set; }
@@ -16,18 +16,38 @@ namespace ComicBookGallery.Models
 
         public string DisplayText
         {
+          
             get
             {
-                return SeriesTitle + " #" + IssueNumber;
+                var series = Series; // Creating a local variable of the class Series
+                if (series != null) // Checks if Series is not equal to null
+                {
+                    return Series.Title + " #" + IssueNumber; // Return matched Title and IssueNumber
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
-        // series-title-issuenumber.jpg
+        
         public string CoverImageFileName
         {
             get
             {
-                return SeriesTitle.Replace(" ", "-").ToLower() + "-" + IssueNumber + ".jpg";
+                var series = Series; // Create a variable of the class Series
+                if (series != null)
+                {
+                    // series-title-issuenumber.jpg
+                    return Series.Title.Replace(" ", "-").ToLower() + "-" + IssueNumber + ".jpg";
+                }
+                else
+                {
+                    return null;
+                }
+                
+
             }
         }
         
