@@ -28,18 +28,14 @@ namespace ComicBookGallery.Data
                     break;
                 }
             }
-
             if (seriesToReturn != null)
             {
                 var comicBooks = new ComicBook[0];
 
                 foreach( var comicBook in Data.ComicBooks)
                 {
-                    if(comicBook.Series != null && comicBook.Id == id)
+                    if(comicBook.Series != null && comicBook.Series.Id == id)
                     {
-                        // Adding element to array if statement returns true
-                        // Resize with length +1 index
-                        // Adds object to index - 1, which is the object we added (last object).
                         Array.Resize(ref comicBooks, comicBooks.Length + 1);
                         comicBooks[comicBooks.Length - 1] = comicBook;
                     }

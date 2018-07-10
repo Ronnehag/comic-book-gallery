@@ -41,9 +41,9 @@ namespace ComicBookGallery.Data
             {
             new ComicBook()
                 {
-                Series = series[0],
                 IssueNumber = 700,
                 Id = 1,
+                Series = series[0],
                 DescriptionHtml = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives...<strong>will Peter Parker?</strong></p>",
                 Artists = new Artist[]
                 {
@@ -59,9 +59,10 @@ namespace ComicBookGallery.Data
 
             new ComicBook()
             {
-                Series = series[0],
+                
                 IssueNumber = 657,
                 Id = 2,
+                Series = series[0],
                 DescriptionHtml = "<p><strong>FF: THREE TIE-IN.</strong> Spider-Man visits the FF for a very private wake--just for family.</p>",
                 Artists = new Artist[]
                 {
@@ -76,9 +77,10 @@ namespace ComicBookGallery.Data
 
             new ComicBook()
             {
-                Series = series[1],
+                
                 IssueNumber = 50,
                 Id = 3,
+                Series = series[1],
                 DescriptionHtml = "<p><strong>The Dungeon & The Parapet, Part 1.</strong> Thorn is discovered by Lord Tarsil and the corrupted Stickeaters and thrown into a dungeon with Fone Bone. As she sleeps, a message comes to her about the mysterious \"Crown of Horns\".</p>",
                 Artists = new Artist[]
                 {
@@ -90,6 +92,7 @@ namespace ComicBookGallery.Data
                 Favorite = false
                 }
             };
+
             Series = series; // Sets local instance of series to Series.
             ComicBooks = comicBooks; // Sets local instace of comicbooks to ComicBooks.
 
