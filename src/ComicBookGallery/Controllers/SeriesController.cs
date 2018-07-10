@@ -22,5 +22,17 @@ namespace ComicBookGallery.Controllers
 
             return View(series);
         }
+
+        public ActionResult Detail(int? id) // Makes i 'Nullable'
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            // Loops the Series[] to find matching ID
+            var series = _seriesRepository.GetSeriesDetail(id.Value);
+
+            return View(series);
+        }
     }
 }
